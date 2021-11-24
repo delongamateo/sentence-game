@@ -59,7 +59,7 @@ export const sentenceSlice = createSlice({
       }
     },
     changeStep: (state, action: PayloadAction<string>) => {
-      if (action.payload === "forward" && state.step < 3) {
+      if (action.payload === "next" && state.step < 3) {
         state.step++;
       } else if (action.payload === "back" && state.step > 0) {
         state.step--;
@@ -69,7 +69,7 @@ export const sentenceSlice = createSlice({
       if (state.questions.some((question) => question.valid === false)) {
         state.sentence = "Please answer all questions!";
       } else {
-        state.sentence = `${state.questions[0].answer}  ${state.questions[1].answer}  ${state.questions[2].answer}  ${state.questions[3].answer}`;
+        state.sentence = state.questions.map(question => question.answer).toString().replace(/,/g, " ")
       }
     },
   },
