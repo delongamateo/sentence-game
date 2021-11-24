@@ -1,18 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-
 export interface question {
-    id: number, 
-    question: string, 
-    answer: string, 
-    valid: boolean
+  id: number;
+  question: string;
+  answer: string;
+  valid: boolean;
 }
 
 export interface sentenceState {
-    questions: question[];
-    sentence: string;
-    step: number;
-  }
+  questions: question[];
+  sentence: string;
+  step: number;
+}
 
 const initialState: sentenceState = {
   questions: [
@@ -69,7 +68,10 @@ export const sentenceSlice = createSlice({
       if (state.questions.some((question) => question.valid === false)) {
         state.sentence = "Please answer all questions!";
       } else {
-        state.sentence = state.questions.map(question => question.answer).toString().replace(/,/g, " ")
+        state.sentence = state.questions
+          .map((question) => question.answer)
+          .toString()
+          .replace(/,/g, " ");
       }
     },
   },
