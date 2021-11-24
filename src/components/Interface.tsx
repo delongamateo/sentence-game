@@ -52,7 +52,7 @@ color: white;
 font-size: 16px;
 `
 
-const Question = () => {
+const Interface = () => {
   const dispatch = useAppDispatch();
   const sentence = useAppSelector((state) => state.sentence);
 
@@ -83,4 +83,4 @@ const Question = () => {
 };
 
 
-export default Question;
+export default Interface;

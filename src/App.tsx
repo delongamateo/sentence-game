@@ -1,4 +1,4 @@
-import Question from './components/Question';
+import Interface from './components/Interface';
 import styled from "styled-components";
 
 const AppContainer = styled.div`
@@ -15,7 +15,7 @@ box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px
 function App() {
   return (
     <AppContainer>
-      <Question />
+      <Interface />
     </AppContainer>
   );
 }
