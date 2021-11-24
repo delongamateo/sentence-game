@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.valid {
+  background-color: green;
+}
+
+.notValid {
+    background-color: red;
+}
+
+.progress {
+  display: flex;
+  flex-direction: row;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input {
+    padding: 10px 50px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background-color: #38385F;
+    color: white;
+    text-align: center;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title {
+    color: white;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #38385F;
+    color: white;
+    border-radius: 25px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+
+.button:active {
+    transform: scale(.96);
+}
+
+.sentence {
+    color: white;
+    margin-bottom: 25px;
+}
