@@ -1,5 +1,5 @@
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { makeSentence, changeStep, saveWord, question } from "../app/sentenceSlice";
+import { makeSentence, changeStep, saveWord, questionState } from "../app/sentenceSlice";
 import Step from "./Step";
 import styled from "styled-components";
 
@@ -8,6 +8,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+text-align: center;
 `
 
 const Title = styled.h1`
@@ -47,9 +48,10 @@ cursor: pointer;
 }
 `
 
-const Text = styled.p`
+const Text = styled("p")<{margin: string}>`
 color: white;
 font-size: 16px;
+margin: ${props => props.margin};
 `
 
 const Interface = () => {
@@ -60,10 +62,10 @@ const Interface = () => {
     <Container>
       <Title>Sentence maker</Title>
       <ProgressBar>
-        {sentence.questions.map((question: question) => <Step key={question.id} question={question} />)}
+        {sentence.questions.map((question: questionState) => <Step key={question.id} question={question} />)}
       </ProgressBar>
       <Container>
-        <Text>{sentence.questions[sentence.step].question}</Text>
+        <Text margin="0px">{sentence.questions[sentence.step].question}</Text>
         <Input
           value={sentence.questions[sentence.step].answer}
           type="text"
@@ -77,7 +79,9 @@ const Interface = () => {
         </div>
         <Button onClick={() => dispatch(makeSentence())}>Make a sentence</Button>
       </Container>
-      <Text>{sentence.sentence}</Text>
+      <Container>
+        <Text margin="20px">{sentence.sentence}</Text>
+      </Container>
     </Container>
   );
 };

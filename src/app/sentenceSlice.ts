@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface question {
+export interface questionState {
   id: number;
   question: string;
   answer: string;
@@ -8,7 +8,7 @@ export interface question {
 }
 
 export interface sentenceState {
-  questions: question[];
+  questions: questionState[];
   sentence: string;
   step: number;
 }

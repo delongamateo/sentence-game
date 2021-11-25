@@ -1,4 +1,4 @@
-import { question } from "../app/sentenceSlice";
+import { questionState } from "../app/sentenceSlice";
 import styled from "styled-components";
 
 const StepContainer = styled.div`
@@ -30,13 +30,13 @@ justify-content: center;
 background-color: ${props => props.backgroundColor};
 `
 
-const Step: React.FC<{ question: question }> = (props) => {
+const Step: React.FC<{ question: questionState }> = ({question}) => {
 
   return (
     <StepContainer>
-      <Text>{props.question.question}</Text>
-      <Circle backgroundColor={props.question.valid ? "green" : "red"}>
-        <Text>{props.question.id}</Text>
+      <Text>{question.question}</Text>
+      <Circle backgroundColor={question.valid ? "green" : "red"}>
+        <Text>{question.id}</Text>
       </Circle>
     </StepContainer>
   )
