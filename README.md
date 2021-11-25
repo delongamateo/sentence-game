@@ -1,4 +1,4 @@
-Live app: https://sentence-game.netlify.app/
+## Live app: https://sentence-game.netlify.app/
 
 --------------------------------------------------------------------------------
 
